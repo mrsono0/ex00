@@ -3,9 +3,12 @@ package pusanit.bigdata.myapp;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import org.springframework.stereotype.Service;
+
 import pusanit.bigdata.consoleapp.CMDAO3;
 import pusanit.bigdata.consoleapp.Customer;
 
+@Service
 public class CMServiceWeb {
 
 	public ArrayList<Customer> insertCustomerData(ArrayList<Customer> custList, Customer cust) {
