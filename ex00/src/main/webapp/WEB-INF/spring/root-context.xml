@@ -4,5 +4,12 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-		
+	<bean class="pusanit.bigdata.myapp.service.CustomerService" id="custService" />
+	<bean class="pusanit.bigdata.myapp.controller.CustomerController" id="custController">
+		<property ref="custService" name="customerService" />
+	</bean>
+	<bean id="custDeleteData" class="pusanit.bigdata.myapp.dao.CustomerDeleteData" />
+	<bean id="custInputData" class="pusanit.bigdata.myapp.dao.CustomerInputData" />
+	<bean id="custPrintData" class="pusanit.bigdata.myapp.dao.CustomerPrintData" />
+	<bean id="custUpdateData" class="pusanit.bigdata.myapp.dao.CustomerUpdateData" />
 </beans>
