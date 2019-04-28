@@ -1,15 +1,15 @@
-package pusanit.bigdata.myapp;
+package pusanit.bigdata.consoleapp;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.springframework.stereotype.Service;
 
-import pusanit.bigdata.consoleapp.CMDAO3;
-import pusanit.bigdata.consoleapp.Customer;
-
 @Service
-public class CMServiceWeb {
+public class CMServiceWeb implements CMService {
+	public String run(String conf) {
+		return conf;
+	}
 
 	public ArrayList<Customer> insertCustomerData(ArrayList<Customer> custList, Customer cust) {
 		CMDAO3 cmdao = new CMDAO3();

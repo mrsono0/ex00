@@ -5,6 +5,47 @@ import java.util.Scanner;
 
 public class CMServiceConsole implements CMService {
 
+	public String run(String conf) {
+		// 고객 정보를 저장할 자료구조 선언
+		ArrayList<Customer> custList = new ArrayList<>();
+
+		// 리스트 정보를 조회하기 위해 인덱스를 필요로 함
+		int index = -1;
+		int count = 0;// custList.size()
+
+		// 기본 입력장치로부터 데이터를 입력받기 위해 Scanner객체 생성
+		Scanner scan = new Scanner(System.in);
+
+		while (true) {
+			count = custList.size();
+			String menu = initMenu(custList, scan, count, index); // 입력한 문자열을 모두소문자로 변환
+			switch (menu.charAt(0)) {
+			case 'i':
+				custList = insertCustomerData(custList, scan);
+				break;
+			case 'p':
+				index = printPCustomerData(custList, index, scan);
+				break;
+			case 'n':
+				index = printNCustomerData(custList, index, scan, count);
+				break;
+			case 'c':
+				printCustomerData(custList, index, scan, count);
+				break;
+			case 'u':
+				custList = updateCustomerData(custList, index, scan, count);
+				break;
+			case 'd':
+				custList = deleteCustomerData(custList, index, count);
+				break;
+			case 'q':
+				quitSystem(scan);
+				break;
+			default:
+				System.out.println("메뉴를 잘 못 입력했습니다.");
+			}// end switch
+		} // end while
+	}
 	public String initMenu(ArrayList<Customer> custList, Scanner scan, int count, int index) {
 		System.out.printf("\n[INFO] 고객 수 : %d, 인덱스 : %d\n", count, index);
 		System.out.println("메뉴를 입력하세요.");

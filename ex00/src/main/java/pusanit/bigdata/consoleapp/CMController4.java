@@ -1,4 +1,4 @@
-package pusanit.bigdata.myapp;
+package pusanit.bigdata.consoleapp;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
@@ -12,12 +12,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import pusanit.bigdata.consoleapp.Customer;
-
 @Controller
-public class CMController {
+public class CMController4 {
 
-	private static final Logger logger = LoggerFactory.getLogger(CMController.class);
+	private static final Logger logger = LoggerFactory.getLogger(CMController4.class);
 	private static CMServiceWeb cmservice = new CMServiceWeb();
 	private static ArrayList<Customer> custList = new ArrayList<>();
 
